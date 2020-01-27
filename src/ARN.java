@@ -11,7 +11,7 @@ public class ARN {
             boolean valide = false;
             int i = 0;
             while ( i < arn.length() ) {
-                if (arn[i].equals('A') || arn[i].equals('C') || arn[i].equals('G') || arn[i].equals('U'))
+                if (arn.charAt(i])equals('A') || arn.charAt(i).equals('C') || arn.charAt(i).equals('G') || arn.charAt(i).equals('U'))
                     valide = true;
             }
             return valide;
