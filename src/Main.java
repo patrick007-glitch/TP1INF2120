@@ -8,15 +8,23 @@ public class Main {
     public static final String MSG_SOL_DISTMAX = "Entrez la distance maximale entre les acides amines";
 
     public static void main(String[] args) {
+        Saisie();
 
+
+
+    }
+    public static void Saisie() {
         System.out.print(MSGINTRO);
-    Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+
         System.out.print(MSG_SOL_ARN1 );
-    String a1 = sc.next();
+        String a1 = sc.next();
+
         System.out.print(MSG_SOL_ARN2 );
-    String a2 = sc.next();
+        String a2 = sc.next();
+
         System.out.print(MSG_SOL_DISTMAX );
-    int n = sc.nextInt();
+        int n = sc.nextInt();
 
         sc.close();
     }
