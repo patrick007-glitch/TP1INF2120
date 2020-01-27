@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static final String MSGINTRO = "Bienvenwejfnwekhfbkhbtre programme";
-    public static final String MSG_SOL_ARN1 = "Entrez oefhewjfbhaine d'ARN";
-    public static final String MSG_SOL_ARN2 = "Entrez lasdvjnwejbme chaine d'ARN";
-    public static final String MSG_SOL_DISTMAX = "Entresahfaschbees acides amines";
+    public static final String MSG_INTRO = "Bienvenue a notre programme";
+    public static final String MSG_SOL_ARN1 = "Entrez la premiere chaine d'ARN";
+    public static final String MSG_SOL_ARN2 = "Entrez la deuxieme chaine d'ARN";
+    public static final String MSG_SOL_DIST_MAX = "Entrez la distance maximale entre les acides amines";
 
     public static void main(String[] args) {
         Saisie();
@@ -14,7 +14,7 @@ public class Main {
 
     }
     public static void Saisie() {
-        System.out.print(MSGINTRO);
+        System.out.print(MSG_INTRO);
         Scanner sc = new Scanner(System.in);
 
         System.out.print(MSG_SOL_ARN1 );
@@ -23,7 +23,7 @@ public class Main {
         System.out.print(MSG_SOL_ARN2 );
         String a2 = sc.next();
 
-        System.out.print(MSG_SOL_DISTMAX );
+        System.out.print(MSG_SOL_DIST_MAX );
         int n = sc.nextInt();
 
         sc.close();
