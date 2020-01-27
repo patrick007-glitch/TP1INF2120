@@ -3,11 +3,11 @@ public class ARN {
     public String arn(String chaine) {
         int i = 0;
         while (i < chaine.length()) {
-            if (arnValide)
+            if (arnValide( arn ))
                 this.arn = chaine;
         }
     }
-        private boolean arnValide (String arn) {
+        public boolean arnValide (String arn) {
             boolean valide = false;
             int i = 0;
             while ( i < arn.length() ) {
