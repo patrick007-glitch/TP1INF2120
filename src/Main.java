@@ -2,10 +2,10 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static final String MSGINTRO = "Bienvenwejfnwekhfbkhbtre programme";
-    public static final String MSG_SOL_ARN1 = "Entrez oefhewjfbhaine d'ARN";
-    public static final String MSG_SOL_ARN2 = "Entrez lasdvjnwejbme chaine d'ARN";
-    public static final String MSG_SOL_DISTMAX = "Entresahfaschbees acides amines";
+    public static final String MSGINTRO = "Bienven dans le programme";
+    public static final String MSG_SOL_ARN1 = "Entrez premiere chaine d'ARN";
+    public static final String MSG_SOL_ARN2 = "Entrez deuxieme chaine d'ARN";
+    public static final String MSG_SOL_DISTMAX = "Entrez distance max d'acides amines";
 
     public static void main(String[] args) {
         Saisie();
