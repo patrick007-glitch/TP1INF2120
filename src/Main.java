@@ -16,11 +16,13 @@ public class Main {
 
 
 
+
     static ArrayList <acideAmines> chaineAcide1;
     static ArrayList <acideAmines> chaineAcide2;
 
     public static void main(String[] args) {
         System.out.print(MSGINTRO);
+
 
 
         Scanner sc = new Scanner(System.in);
@@ -39,6 +41,7 @@ public class Main {
         //distance
         System.out.print(MSG_SOL_DISTMAX);
         int distance = sc.nextInt();
+
 
         sc.close();
         double metrique = calcul.Similarite(calcul.calculDeviationMinimal
