@@ -36,7 +36,8 @@ public enum acideAmines {
 
      //Constructeur
 
-    private acideAmines(String abreviation, String[] composition){
+    private
+    acideAmines(String abreviation, String[] composition){
         this.abreviation = abreviation;
         this.composition = composition;
 

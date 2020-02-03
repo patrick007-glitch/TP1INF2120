@@ -28,7 +28,7 @@ public static double calculDeviationMinimal
     double resultat = 0;
     for (int i = 0; i < chaine1.size(); i++ ) {
         double deviationMinimal = distance;
-        for(int j = 0; j < chaine1.size(); j++ ) {
+        for(int j = 0; j < chaine2.size(); j++ ) {
             if( chaine2.get( j ).equals( chaine1.get( i ))) {
                 if (( Math.abs( j-i )) < deviationMinimal ) {
                     deviationMinimal = Math.abs( j-i );
@@ -37,18 +37,18 @@ public static double calculDeviationMinimal
         }
         deviationTotal = deviationTotal + deviationMinimal;
     }
-    for ( int i = 0; i < chaine2.size(); i++ ) {
+    for ( int k = 0; k < chaine2.size(); k++ ) {
         double deviationMinimal = distance;
-        for ( int j = 0; j < chaine1.size(); j++ ) {
-            if ( chaine1.get(j).equals(chaine1.get( i ))) {
-                if ((Math.abs(j-i)) < deviationMinimal ) {
-                    deviationMinimal = Math.abs( j-i );
+        for ( int l = 0; l < chaine1.size(); l++ ) {
+            if ( chaine1.get( l ).equals(chaine2.get( k ))) {
+                if ((Math.abs( l-k )) < deviationMinimal ) {
+                    deviationMinimal = Math.abs( l-k );
                 }
             }
         }
         deviationTotal = deviationTotal + deviationMinimal;
     }
-           resultat = (( deviationTotal ) / ( chaine1.size() + chaine2.size() + distance ));
+           resultat = (( deviationTotal ) / ( (chaine1.size() + chaine2.size()) * distance ));
     return resultat;
 }
 /**
@@ -58,8 +58,9 @@ public static double calculDeviationMinimal
  *  @param devMin est la mesure de la deviation minimale des acides amines entre 2 chaines d"ARN.
  *  @return metrique la mesure de similarite entre 2 chaine d'ARN.
  */
- public static double Similarite ( double devMin ) {
-     double metrique = Math.exp( -devMin/( 2 * 23 * 23 ));
+ public static double Similarite ( double devMin) {
+
+     double metrique = (Math.exp( -6 * ( devMin * devMin )));
 
      return metrique;
  }

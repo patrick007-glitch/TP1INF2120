@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 
+
+
+
 public class conversion {
 
         /**
@@ -32,7 +35,7 @@ public class conversion {
         public static ArrayList <String> nuclotideCodon (String chaineCaractere){
             ArrayList <String> listeCodon = new ArrayList<String>();
             for (int i =0; i < (chaineCaractere.length()/3); i ++){
-                listeCodon.add(chaineCaractere.substring(i,i+3));
+                listeCodon.add(chaineCaractere.substring((i*3),(i*3)+3));
             }
             return listeCodon;
         }
@@ -44,14 +47,14 @@ public class conversion {
          * acide amine correspondant a chaque codon et forme une nouvelle liste de ces acides.
          * Cette nouvelle liste d'acide est retourner par la methode.
          *
-         * @param codons un ArrayList avec un condom(groupement de 3 nucleotide) dans chaque case
+         * @param codons un ArrayList avec un codom(groupement de 3 nucleotide) dans chaque case
          * @return une liste des acides representant la liste de condoms passes en param.
          */
+
         public static ArrayList <acideAmines> codonAcideAmine (ArrayList <String> codons){
             ArrayList <acideAmines> acideAmines = new ArrayList<acideAmines>();
             for ( int i = 0; i < codons.size(); i++){
                acideAmines.add(findAcides(codons.get(i)));
-
             }
             return acideAmines;
         }

@@ -98,15 +98,17 @@ public class Main {
         }
 
         sc.close();
+        double test = calcul.calculDeviationMinimal ( chaineAcide1 , chaineAcide2 , distance );
         double metrique = calcul.Similarite( calcul.calculDeviationMinimal
                     ( chaineAcide1 , chaineAcide2 , distance ));
-        System.out.println( "Resultat: " + metrique );
+        System.out.println( "Resultat: " + metrique + "\n" + test);
+
         for ( int i = 0; i < chaineAcide1.size(); i++ ) {
                 System.out.println( chaineAcide1.get( i ));
         }
 
-        for ( int i = 0; i < chaineAcide2.size(); i++ ) {
-                System.out.println( chaineAcide2.get( i ) );
+        for ( int j = 0; j < chaineAcide2.size(); j++ ) {
+                System.out.println( chaineAcide2.get( j ) );
         }
     }
 }
