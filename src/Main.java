@@ -12,9 +12,9 @@ import java.util.Scanner;
 public class Main {
 
     public static final String MSG_INTRO = "Bienvenue dans le programme\n\n";
-    public static final String MSG_SOL_ARN1 = "Entrez la premiere chaine d'ARN";
-    public static final String MSG_SOL_ARN2 = "Entrez la deuxieme chaine d'ARN";
-    public static final String MSG_SOL_DIST_MAX = "Entrez la distance maximum entre les acides amines";
+    public static final String MSG_SOL_ARN1 = "Entrez la premiere chaine d'ARN : ";
+    public static final String MSG_SOL_ARN2 = "Entrez la deuxieme chaine d'ARN : ";
+    public static final String MSG_SOL_DIST_MAX = "Entrez la distance maximum entre les acides amines : ";
     public static final String MSG_ERR = "\nIl y a une erreur dans les donnees. Programme terminee.";
 
     static ArrayList <acideAmines> chaineAcide1;
@@ -98,18 +98,11 @@ public class Main {
         }
 
         sc.close();
-        double test = calcul.calculDeviationMinimal ( chaineAcide1 , chaineAcide2 , distance );
-        double metrique = calcul.Similarite( calcul.calculDeviationMinimal
+        double test = calcul.calculDeviationPonderee ( chaineAcide1 , chaineAcide2 , distance );
+        double metrique = calcul.Similarite( calcul.calculDeviationPonderee
                     ( chaineAcide1 , chaineAcide2 , distance ));
-        System.out.println( "Resultat: " + metrique + "\n" + test);
+        System.out.println( "Resultat: " + metrique );
 
-        for ( int i = 0; i < chaineAcide1.size(); i++ ) {
-                System.out.println( chaineAcide1.get( i ));
-        }
-
-        for ( int j = 0; j < chaineAcide2.size(); j++ ) {
-                System.out.println( chaineAcide2.get( j ) );
-        }
     }
 }
 

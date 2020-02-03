@@ -22,35 +22,31 @@ public class calcul {
  * @param3 distance la distance minimal a laquelle 2 acides amine se trouvent lorsque l"on compare deux ARN.
 * @return resultat la mesure de la deviation minimal entre 2 chaine d'ARN.
 */
-public static double calculDeviationMinimal
+
+
+    public static double calculDeviation
         (ArrayList <acideAmines> chaine1, ArrayList <acideAmines> chaine2 , double distance){
-    double deviationTotal = 0;
-    double resultat = 0;
-    for (int i = 0; i < chaine1.size(); i++ ) {
-        double deviationMinimal = distance;
-        for(int j = 0; j < chaine2.size(); j++ ) {
-            if( chaine2.get( j ).equals( chaine1.get( i ))) {
-                if (( Math.abs( j-i )) < deviationMinimal ) {
-                    deviationMinimal = Math.abs( j-i );
+            double deviationTotal = 0;
+            for (int i = 0; i < chaine1.size(); i++ ) {
+                double deviationMinimal = distance;
+                for(int j = 0; j < chaine2.size(); j++ ) {
+                    if( chaine2.get( j ).equals( chaine1.get( i ))) {
+                        if (( Math.abs( j-i )) < deviationMinimal ) {
+                            deviationMinimal = Math.abs( j-i );
+                        }
+                    }
                 }
+                deviationTotal = deviationTotal + deviationMinimal;
             }
-        }
-        deviationTotal = deviationTotal + deviationMinimal;
+        return deviationTotal;
     }
-    for ( int k = 0; k < chaine2.size(); k++ ) {
-        double deviationMinimal = distance;
-        for ( int l = 0; l < chaine1.size(); l++ ) {
-            if ( chaine1.get( l ).equals(chaine2.get( k ))) {
-                if ((Math.abs( l-k )) < deviationMinimal ) {
-                    deviationMinimal = Math.abs( l-k );
-                }
-            }
-        }
-        deviationTotal = deviationTotal + deviationMinimal;
+    public static double calculDeviationPonderee
+            (ArrayList <acideAmines> chaine1, ArrayList <acideAmines> chaine2 , double distance){
+                double resultat;
+               resultat = ((calculDeviation(chaine1,chaine2,distance)
+                       + calculDeviation(chaine2,chaine1,distance) ) / ( (chaine1.size() + chaine2.size()) * distance ));
+        return resultat;
     }
-           resultat = (( deviationTotal ) / ( (chaine1.size() + chaine2.size()) * distance ));
-    return resultat;
-}
 /**
  * Cette methode est la 2e parti du calcul pour mesurer la similarite entre 2 chaine d'ARN.
  *  Cette methode fait le calcul d'une metrique de similarite entre 2 chaines d'ARN a l'aide de la deviation
