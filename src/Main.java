@@ -17,10 +17,10 @@ public class Main {
     // CONSTANTES
     //------------
     public static final String MSG_INTRO = "Bienvenue dans le programme\n\n";
-    public static final String MSG_SOL_ARN1 = "Entrez la premiere chaine d'ARN";
-    public static final String MSG_SOL_ARN2 = "Entrez la deuxieme chaine d'ARN";
+    public static final String MSG_SOL_ARN1 = "Entrez la premiere chaine d'ARN : ";
+    public static final String MSG_SOL_ARN2 = "Entrez la deuxieme chaine d'ARN : ";
     public static final String MSG_SOL_DIST_MAX = "Entrez la distance maximum" +
-            "  entre les acides amines";
+            "  entre les acides amines : ";
     public static final String MSG_ERR_ARN = "\nLa chaine d'ARN saisie est " +
             "invalide. Programme terminee.";
     public static final String MSG_ERR_DIST = "\nLa distance entrez doit être" +
@@ -133,6 +133,17 @@ public class Main {
             double metrique = calcul.Similarite( calcul.calculDeviationPonderee
                     ( chaineAcide1 , chaineAcide2 , distance ));
             System.out.println( "Resultat: " + metrique );
+            for (int i = 0; i < chaineAcide1.size(); i++){
+
+                System.out.println(chaineAcide1.get(i).toString());
+
+            }
+            for (int i = 0; i < chaineAcide2.size(); i++){
+
+                System.out.println(chaineAcide2.get(i).toString());
+
+            }
+
 
 
         } catch ( InputMismatchException IME) {
