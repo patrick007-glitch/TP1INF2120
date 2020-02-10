@@ -35,13 +35,20 @@ public enum acideAmines {
 
     //attributs d'instance
 
-
     private String abreviation;
     private String [] composition;
 
 
      //Constructeur
 
+    /**
+     *  Construit une instance d'un acide amine en fonction des strings
+     *  passees en parametres.
+     *
+     * @param abreviation le nom court d'un acide amine.
+     * @param composition un tableau contenant toutes les possibilites de
+     *                    codons qui sont associe a un acide amine.
+     */
     private acideAmines( String abreviation, String[] composition ){
         this.abreviation = abreviation;
         this.composition = composition;
@@ -49,10 +56,21 @@ public enum acideAmines {
 
     //getter
 
+    /**
+     * Retourne tous les codons qui peuvent composer un acide amine.
+     *
+     * @return un tableau de tous les codons qui composent un acide amine.
+     */
     public String[] getComposition() {
         return composition;
     }
 
+
+    /**
+     * Retourne l'abreviation d'un acide amine.
+     *
+     * @return l'abreviation representant un acide amine
+     */
     public String getAbreviation(){
         return abreviation;
     }
@@ -60,17 +78,22 @@ public enum acideAmines {
     //autres methode public
 
     /**
-     * Verifie si un codon faisant partie d'une chaine d'ARN est un acide amine existant.
+     * Verifie si un codon passee en parametre fait partie de la composition
+     * d'un des acides amines.
      *
-     * @param codon
-     * @return resultat
+     * @param codon une chaine de 3 lettres representant une partie d'une
+     *              chaine d'ARN.
+     * @return resultat vrai si le codon fait partie de la composition d'une
+     * chaine d'ARN.
      */
-    public boolean isType( String codon ){
+    public boolean estDeType( String codon ){
         boolean resultat = false;
+
         for ( int i = 0; i < composition.length; i++){
             if ( composition[ i ].equals( codon ))
                 resultat = true;
         }
+
         return resultat;
     }
 }

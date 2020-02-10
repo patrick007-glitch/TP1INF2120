@@ -16,10 +16,12 @@ public class conversion {
          */
         public static acideAmines findAcides( String codon ){
             acideAmines resultat = null;
+
             for ( acideAmines acide : acideAmines.values() ){
-                if (acide.isType( codon ))
+                if (acide.estDeType( codon ))
                     resultat = acide;
             }
+
             return resultat;
         }
 
@@ -35,9 +37,11 @@ public class conversion {
          */
         public static ArrayList <String> nuclotideCodon ( String chaineCaractere ){
             ArrayList <String> listeCodon = new ArrayList<String>();
+
             for ( int i = 0; i < ( chaineCaractere.length()/3 ); i ++){
                 listeCodon.add(chaineCaractere.substring( i, i + 3 ));
             }
+
             return listeCodon;
         }
 
@@ -53,10 +57,12 @@ public class conversion {
          */
         public static ArrayList <acideAmines> codonAcideAmine ( ArrayList <String> codons ){
             ArrayList <acideAmines> acideAmines = new ArrayList<acideAmines>();
+
             for ( int i = 0; i < codons.size(); i++ ){
                acideAmines.add( findAcides( codons.get( i )));
 
             }
+
             return acideAmines;
         }
 }
