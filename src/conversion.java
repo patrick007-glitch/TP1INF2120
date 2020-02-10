@@ -13,9 +13,9 @@ public class conversion {
         *  @param codon la chaine de 3 lettres representant des nucleoitides
         *  @return resultats retourne le nom de l'acideAmines representer par les lettres composant le codon
          */
-        public static acideAmines findAcides(String codon){
-            acideAmines resultat = null;
-            for (acideAmines acide : acideAmines.values()){
+        public static AcideAmines findAcides(String codon){
+            AcideAmines resultat = null;
+            for (AcideAmines acide : AcideAmines.values()){
                 if (acide.isType(codon))
                     resultat = acide;
             }
@@ -52,8 +52,8 @@ public class conversion {
          * @return une liste des acides representant la liste de condoms passes en param.
          */
 
-        public static ArrayList <acideAmines> codonAcideAmine (ArrayList <String> codons){
-            ArrayList <acideAmines> acideAmines = new ArrayList<acideAmines>();
+        public static ArrayList <AcideAmines> codonAcideAmine (ArrayList <String> codons){
+            ArrayList <AcideAmines> acideAmines = new ArrayList<AcideAmines>();
             for ( int i = 0; i < codons.size(); i++){
                acideAmines.add(findAcides(codons.get(i)));
             }

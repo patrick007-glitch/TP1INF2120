@@ -25,7 +25,7 @@ public class calcul {
 
 
     public static double calculDeviation
-        (ArrayList <acideAmines> chaine1, ArrayList <acideAmines> chaine2 , double distance){
+        (ArrayList <AcideAmines> chaine1, ArrayList <AcideAmines> chaine2 , double distance){
             double deviationTotal = 0;
             for (int i = 0; i < chaine1.size(); i++ ) {
                 double deviationMinimal = distance;
@@ -41,7 +41,7 @@ public class calcul {
         return deviationTotal;
     }
     public static double calculDeviationPonderee
-            (ArrayList <acideAmines> chaine1, ArrayList <acideAmines> chaine2 , double distance){
+            (ArrayList <AcideAmines> chaine1, ArrayList <AcideAmines> chaine2 , double distance){
                 double resultat;
                resultat = ((calculDeviation(chaine1,chaine2,distance)
                        + calculDeviation(chaine2,chaine1,distance) ) / ( (chaine1.size() + chaine2.size()) * distance ));

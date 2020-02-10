@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-
-public enum acideAmines {
+public enum AcideAmines {
 
     Alanine("Ala", new String[]{"GCU", "GCC", "GCA","GCG"}),
     Arginine("Arg", new String[]{"CGU", "CGC", "CGA", "CGG", "AGA", "AGG"}),
@@ -36,8 +34,7 @@ public enum acideAmines {
 
      //Constructeur
 
-    private
-    acideAmines(String abreviation, String[] composition){
+    private AcideAmines(String abreviation, String[] composition){
         this.abreviation = abreviation;
         this.composition = composition;
 

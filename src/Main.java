@@ -17,8 +17,8 @@ public class Main {
     public static final String MSG_SOL_DIST_MAX = "Entrez la distance maximum entre les acides amines : ";
     public static final String MSG_ERR = "\nIl y a une erreur dans les donnees. Programme terminee.";
 
-    static ArrayList <acideAmines> chaineAcide1;
-    static ArrayList <acideAmines> chaineAcide2;
+    public static ArrayList <AcideAmines> chaineAcide1;
+    public static ArrayList <AcideAmines> chaineAcide2;
 
     /** Methode qui verifie qu'une chaine de charactere representant un codon est valide.
     * Un codon valide contient un nombre de lettre divisible par 3 et contient uniquement
