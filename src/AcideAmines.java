@@ -1,12 +1,10 @@
-import java.util.ArrayList;
-
 /**
  * Le type acideAmines sert a modeliser tous les acides amines possible a l'aide de leur nom complet, leur abreviation
  * ainsi que les chaines de 3 nucleotides(codon) qui peuvent composer ces acides amines.
  *
  * Cette classe sert a faciliter la creation de methode de comparaison entre 2 ARN saisi par l'utilisateur.
  */
-public enum acideAmines {
+public enum AcideAmines {
 
     Alanine("Ala", new String[]{ "GCU", "GCC", "GCA","GCG" } ),
     Arginine("Arg", new String[]{ "CGU", "CGC", "CGA", "CGG", "AGA", "AGG" } ),
@@ -49,7 +47,7 @@ public enum acideAmines {
      * @param composition un tableau contenant toutes les possibilites de
      *                    codons qui sont associe a un acide amine.
      */
-    private acideAmines( String abreviation, String[] composition ){
+    private AcideAmines(String abreviation, String[] composition ){
         this.abreviation = abreviation;
         this.composition = composition;
     }

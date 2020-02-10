@@ -4,7 +4,9 @@ import java.util.Scanner;
 
 /**
 *
-*
+* Description : Programme permettant de calculer un indice de similarite
+ * a partir de deux chaines de caracteres representants deux
+ * chaines d'acidesAmines.
 * Auteur: Jean-Michel Landry, Patrick Chalifour
 * Code Permanent: LANJ09049206, CHAP03089503
 * courriels: dj991063@ens.uqam.ca, landry.jean-michel.2@courrier.uqam.ca
@@ -16,6 +18,7 @@ public class Main {
     //------------
     // CONSTANTES
     //------------
+
     public static final String MSG_INTRO = "Bienvenue dans le programme\n\n";
     public static final String MSG_SOL_ARN1 = "Entrez la premiere chaine d'ARN : ";
     public static final String MSG_SOL_ARN2 = "Entrez la deuxieme chaine d'ARN : ";
@@ -28,11 +31,13 @@ public class Main {
     public static final String MSG_EXCEPTION_DIST = "\nLa distance doit etre " +
             "un  nombre plus grand que 0. " +
                                                      "Programme terminee.";
+
     //------------
     // VARIABLES
     //------------
-    public static ArrayList<acideAmines> chaineAcide1;
-    public static ArrayList<acideAmines> chaineAcide2;
+
+    public static ArrayList<AcideAmines> chaineAcide1;
+    public static ArrayList<AcideAmines> chaineAcide2;
 
     /**
      * Methode qui verifie qu'une chaine de charactere representant un codon est valide.
@@ -47,6 +52,7 @@ public class Main {
      * @param chaine est une chaine de charactere representant un ARN.
      * @return valide retourne vrai si la chaine est valide faux sinon.
      */
+
     public static boolean estArnValide( String chaine ) {
         boolean valide = false;
         if (( chaine.length() % 3 ) == 0 && valCharac( chaine )) {
@@ -91,6 +97,7 @@ public class Main {
      *
      * @param args rien.
      */
+
     public static void main( String[] args ) {
         System.out.print( MSG_INTRO );
         try {
@@ -101,8 +108,8 @@ public class Main {
             System.out.print( MSG_SOL_ARN1 );
             String chaine1 = sc.next();
             if ( chaine1 != null && estArnValide( chaine1 )) {
-                chaineAcide1 = conversion.codonAcideAmine
-                        ( conversion.nuclotideCodon( chaine1 ));
+                chaineAcide1 = Conversion.codonAcideAmine
+                        ( Conversion.nuclotideCodon( chaine1 ));
             } else {
                 System.err.println( MSG_ERR_ARN );
                 System.exit(-1 );
@@ -112,8 +119,8 @@ public class Main {
             System.out.print( MSG_SOL_ARN2 );
             String chaine2 = sc.next();
             if ( chaine2 != null && estArnValide( chaine2 )) {
-                chaineAcide2 = conversion.codonAcideAmine
-                        ( conversion.nuclotideCodon( chaine2 ));
+                chaineAcide2 = Conversion.codonAcideAmine
+                        ( Conversion.nuclotideCodon( chaine2 ));
             } else {
                 System.err.println( MSG_ERR_ARN );
                 System.exit(-1 );
@@ -130,19 +137,9 @@ public class Main {
             sc.close();
 
 
-            double metrique = calcul.Similarite( calcul.calculDeviationPonderee
+            double metrique = Calcul.Similarite( Calcul.calculDeviationPonderee
                     ( chaineAcide1 , chaineAcide2 , distance ));
             System.out.println( "Resultat: " + metrique );
-            for (int i = 0; i < chaineAcide1.size(); i++){
-
-                System.out.println(chaineAcide1.get(i).toString());
-
-            }
-            for (int i = 0; i < chaineAcide2.size(); i++){
-
-                System.out.println(chaineAcide2.get(i).toString());
-
-            }
 
 
 

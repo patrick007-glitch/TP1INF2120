@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.lang.*;
-public class calcul {
+public class Calcul {
 
     /**
      * Cette methode calcul la deviation minimal entre 2 ARN
@@ -8,14 +8,14 @@ public class calcul {
      * Nous définissons premièrement la déviation minimale de l’acide aminé 𝑠𝑖 situé
      * à la position 𝑖de l’ARN 𝑠par rapport à l’ARN 𝑡.Ilfaut trouver un acide aminé
      * 𝑡𝑗 dans l’ARN 𝑡qui estpareil à l’acide aminé 𝑠𝑖(donc 𝑠𝑖=𝑡𝑗).  La déviation entre
-     * les deux est la valeur absoluede la différence de leur indice:𝑎𝑏𝑠(𝑖−𝑗).  Il faut
-     * trouver l’acide aminé𝑡𝑗qui minimalise cette déviation(cela nous donne: min({𝑎𝑏𝑠(𝑖−𝑗)|𝑡𝑗∈𝑡∧𝑡𝑗=𝑠𝑖})).
-     * Si cette déviation minimale est plus grande que le coefficient 𝑑(troisième entrée du programme)
-     * alors elle est remplacée par la valeur de 𝑑.  Cela nous donne la déviation minimale de𝑠𝑖par
+     * les deux est la valeur absolue de la différence de leur indice:𝑎𝑏𝑠(𝑖−𝑗).  Il faut
+     * trouver l’acide aminé qui minimalise cette déviation (cela nous donne: min({𝑎𝑏𝑠(𝑖−𝑗)|𝑡𝑗∈𝑡∧𝑡𝑗=𝑠𝑖})).
+     * Si cette déviation minimale est plus petite que le coefficient 𝑑(troisième entrée du programme)
+     * alors elle est remplacée par la valeur de 𝑑.  Cela nous donne la déviation minimale de 𝑠 par
      * rapport a 𝑡.Ensuite, il suffit de faire la somme des déviations minimales de tous les
-     * acides aminé de 𝑠par rapport à𝑡et de faire la somme des déviations minimales de
-     * tous les acides aminé de 𝑡par rapport à 𝑠.Additionnez ces deux sommes pour obtenir
-     * la déviation minimale totaleentre les deux ARNs.
+     * acides aminés de 𝑠 par rapport à 𝑡 et de faire la somme des déviations minimales de
+     * tous les acides aminés de 𝑡 par rapport à 𝑠. Additionnez ces deux sommes pour obtenir
+     * la déviation minimale totale entre les deux ARNs.
      *
      * @param1 chaine1 la premiere chaine d'ARN a comparer.
      * @param2 chaine2,la deuxieme chaine d'ARN a comparer.
@@ -25,7 +25,7 @@ public class calcul {
 
 
     public static double calculDeviation
-    (ArrayList <acideAmines> chaine1, ArrayList <acideAmines> chaine2 , double distance){
+    (ArrayList <AcideAmines> chaine1, ArrayList <AcideAmines> chaine2 , double distance){
         double deviationTotal = 0;
         for (int i = 0; i < chaine1.size(); i++ ) {
             double deviationMinimal = distance;
@@ -41,7 +41,7 @@ public class calcul {
         return deviationTotal;
     }
     public static double calculDeviationPonderee
-            (ArrayList <acideAmines> chaine1, ArrayList <acideAmines> chaine2 , double distance){
+            (ArrayList <AcideAmines> chaine1, ArrayList <AcideAmines> chaine2 , double distance){
         double resultat;
         resultat = ((calculDeviation(chaine1,chaine2,distance)
                 + calculDeviation(chaine2,chaine1,distance) ) / ( (chaine1.size() + chaine2.size()) * distance ));
