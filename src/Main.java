@@ -3,7 +3,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
-*
+* Ce programme sert a calculer une metrique de similarite entre 2 chaines d'ARN.
 *
 * Auteur: Jean-Michel Landry, Patrick Chalifour
 * Code Permanent: LANJ09049206, CHAP03089503
@@ -20,11 +20,11 @@ public class Main {
     public static final String MSG_SOL_ARN1 = "Entrez la premiere chaine d'ARN";
     public static final String MSG_SOL_ARN2 = "Entrez la deuxieme chaine d'ARN";
     public static final String MSG_SOL_DIST_MAX = "Entrez la distance maximum" +
-            "  entre les acides amines";
+                                                  "  entre les acides amines";
     public static final String MSG_ERR_ARN = "\nLa chaine d'ARN saisie est " +
-            "invalide. Programme terminee.";
+                                              "invalide. Programme terminee.";
     public static final String MSG_ERR_DIST = "\nLa distance entrez doit être" +
-            "  plus grande que 0. Programme terminee.";
+                                    "  plus grande que 0. Programme terminee.";
     public static final String MSG_EXCEPTION_DIST = "\nLa distance doit etre " +
             "un  nombre plus grand que 0. " +
                                                      "Programme terminee.";
@@ -35,7 +35,8 @@ public class Main {
     public static ArrayList<acideAmines> chaineAcide2;
 
     /**
-     * Methode qui verifie qu'une chaine de charactere representant un codon est valide.
+     * Methode qui verifie qu'une chaine de charactere representant un codon
+     * est valide.
      *
      * Un codon valide contient un nombre de lettre divisible par 3 et
      * contient  uniquement les lettres A, C, G et U. Cette methode s'assure
@@ -64,7 +65,8 @@ public class Main {
      * charactere invalide elle retourne vrai.
      *
      * @param chaine est une chaine de characteres representant un ARN.
-     * @return valide retourne faux si la chaine contient une lettre autre que A, C, G ou U, sinon vrai.
+     * @return valide retourne faux si la chaine contient une lettre autre que
+     * A, C, G ou U, sinon vrai.
      */
     public static boolean valCharac( String chaine ) {
         boolean valide = true;
@@ -95,7 +97,7 @@ public class Main {
         System.out.print( MSG_INTRO );
         try {
             Scanner sc = new Scanner( System.in );
-            //Saisie des chainesARN par l'utilisateurs et distances Max a considerer
+       //Saisie des chainesARN par l'utilisateurs et distances Max a considerer
 
             //chaine1
             System.out.print( MSG_SOL_ARN1 );

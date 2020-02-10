@@ -77,9 +77,10 @@ public class calcul {
  *  @return metrique la mesure de similarite entre 2 chaine d'ARN.
  */
  public static double Similarite ( double devMin ) {
-    double metrique = Math.exp( -devMin / ( 2 * 23 * 23 ));
 
-    return metrique;
+     double metrique = (Math.exp( -6 * ( devMin * devMin )));
+
+     return metrique;
  }
 
 }

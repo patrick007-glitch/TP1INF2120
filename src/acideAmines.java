@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 
 /**
- * Le type acideAmines sert a modeliser tous les acides amines possible a l'aide de leur nom complet, leur abreviation
- * ainsi que les chaines de 3 nucleotides(codon) qui peuvent composer ces acides amines.
+ * Le type acideAmines sert a modeliser tous les acides amines possible a
+ * l'aide de leur nom complet, leur abreviation ainsi que les chaines de 3
+ * nucleotides(codon) qui peuvent composer ces acides amines.
  *
- * Cette classe sert a faciliter la creation de methode de comparaison entre 2 ARN saisi par l'utilisateur.
+ * Cette classe sert a faciliter la creation de methode de comparaison entre 2
+ * ARN saisi par l'utilisateur.
  */
 public enum acideAmines {
 
